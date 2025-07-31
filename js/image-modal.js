@@ -136,10 +136,10 @@ class ImageModal {
     // 关闭按钮样式
     this.$closeBtn.css({
       'position': 'absolute',
-      'top': '0.2rem',
-      'right': '0.2rem',
-      'width': '0.4rem',
-      'height': '0.4rem',
+      'top': '0.1rem',
+      'right': '0.1rem',
+      'width': '0.2rem',
+      'height': '0.2rem',
       'background': 'url(../../images/guan.png) no-repeat 0px 0px',
       'background-size': 'cover'
     });

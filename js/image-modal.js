@@ -140,7 +140,7 @@ class ImageModal {
       'right': '0.2rem',
       'width': '0.4rem',
       'height': '0.4rem',
-      'background': 'url(../../images/close.png) no-repeat 0px 0px',
+      'background': 'url(../../images/guan.png) no-repeat 0px 0px',
       'background-size': 'cover'
     });
 

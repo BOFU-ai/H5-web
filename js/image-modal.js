@@ -138,8 +138,8 @@ class ImageModal {
       'position': 'absolute',
       'top': '0.1rem',
       'right': '0.1rem',
-      'width': '0.2rem',
-      'height': '0.2rem',
+      'width': '0.4rem',
+      'height': '0.4rem',
       'background': 'url(../../images/close.png) no-repeat 0px 0px',
       'background-size': 'cover'
     });

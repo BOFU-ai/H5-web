@@ -105,125 +105,25 @@
             42% { transform: scale(1.2); }
             70% { transform: scale(1); }
         }
-        .menu{
-            position: fixed;
-            bottom: 1.5rem;
-            right: 0rem;
-            background-color: #FFFFFF;
-            width: 0.9rem; /* 默认收起时的宽度 */
-            /* 取消固定高度，改为最小高度 */
-            min-height: 0.81rem; 
-            border-radius: 0.5rem 0rem 0rem 0.5rem;
-            display: flex;
-            flex-direction: row;
-            justify-content: right;
-            box-shadow: -6px 5px 8px rgba(0,0,0,0.2);
-            /* 过渡动画增加高度适配 */
-            transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
-                        height 0.5s ease,
-                        min-height 0.5s ease;
-        }
-
-/* 展开后的menu：自适应高度，弹性布局垂直分布 */
-        .menu.open{
-            position: fixed;
-            bottom: 1.5rem;
-            right: 0rem;
-            background-color: #FFFFFF;
-            width: 1.35rem; /* 展开后的宽度 */
-            /* 取消固定高度，让内容撑开高度 */
-            height: auto; 
-            min-height: 1.4rem; /* 最小高度保证美观 */
-            border-radius: 0.2rem 0rem 0rem 0.2rem;
-            display: flex;
-            flex-direction: column; /* 垂直排列选项 */
-        }
-
-        /* 菜单列表容器：弹性布局占满高度，均匀分布选项 */
-        .menu.open .list{
-            display: flex;
-            flex-direction: column; /* 选项垂直排列 */
-            width: 100%;
-            margin: 0.1rem 0; /* 上下留出边距 */
-            padding: 0; /* 清除默认内边距 */
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            /* 关键：让列表占满menu高度，选项均匀分布 */
-            flex: 1; 
-            justify-content: space-around; /* 选项之间均匀分布 */
-        }
-
-        .menu.open .list.active{
-            opacity: 1;
-        }
-
-        /* 单个选项样式：自适应高度，下划线居中 */
-        .menu.open .list a{
-            font-size: 0.22rem;
-            /* 取消固定高度，让内容决定高度 */
-            height: auto;
-            padding: 0.12rem 0.15rem; /* 上下内边距控制行高 */
-            color: #19758a;
-            font-weight: bold;
-            display: flex;
-            justify-content: left;
-            align-items: center;
-            background-image: url('../../images/line1.png');
-            background-position: center bottom; /* 下划线水平居中 */
+        .menu{position: fixed;bottom: 1.5rem;right:0rem;background-color: #FFFFFF;width:0.9rem;height:0.81rem;border-radius: 0.5rem 0rem 0rem 0.5rem;display: flex;flex-direction: row;justify-content: right;box-shadow: -6px 5px 8px rgba(0,0,0,0.2); transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1), height 0.5s ease;}
+        .menu.open{position: fixed;bottom: 1.5rem;right:0rem;background-color: #FFFFFF;width:1.35rem;height:1.4rem;border-radius: 0.2rem 0rem 0rem 0.2rem;}
+        .menu.open .list{display: flex;flex-direction: column;width: 100%;margin-top: 0.05rem;opacity: 0;transition: opacity 0.5s ease}
+        .menu.open .list.active{opacity: 1}
+        .menu.open .list a{font-size:0.22rem;width: 100%;height: 0.2rem;display: block;color:#19758a;padding: 0.1rem 0.1rem 0.15rem 0.15rem;font-weight: bold;display: flex;justify-content: left;align-items: center;
+            background-image:url('../../images/line.png');
+            background-position:0px bottom;
             background-repeat: no-repeat;
-            background-size: 80% 0.03rem; /* 下划线宽度80%，高度固定 */
+            background-size: contain;
         }
-
-        /* 最后一个选项无下划线 */
-        .menu.open .list .mbg:last-child a{
-            background-image: none;
-        }
-
-        /* 选项悬停样式：下划线自适应位置 */
         .menu.open .list .mbg.hover{
-            background-image: url('../../images/line2-2.png');
-            background-position: 0.15rem bottom; /* 随文字位置微调 */
+            background-image:url('../../images/line2.png');
+            background-position:0.1rem 0.02rem;
             background-repeat: no-repeat;
-            background-size: auto;
+            background-size: contain;
         }
-
-        /* 箭头图标大小调整（保持原样式） */
-        .menu.open .list i{
-            background: url("../../images/arrow1.png") no-repeat 0px 0px;
-            width: 0.11rem;
-            height: 0.12rem;
-            background-size: cover;
-            display: block;
-            margin-right: 0.05rem;
-        }
-
-        /* 菜单按钮图标容器：居中显示 */
-        .menu .con{
-            width: 0.48rem;
-            height: 0.43rem;
-            margin: auto 0.1rem; /* 垂直居中 */
-        }
-       
-        .menu .con img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .ft_tips {
-            position: absolute;
-            /* 绝对定位 */
-            bottom: -50px;
-            /* 距离底部20px */
-            left: 50%;
-            /* 水平居中 */
-            transform: translateX(-50%);
-            /* 微调居中 */
-            color: #666;
-            font-size: 12px;
-            text-align: center;
-            font-weight: 400;
-        }
+        .menu.open .list .mbg:last-child a{background-image: none}
+        .menu.open .list i{background: url("../../images/arrow.png") no-repeat 0px 0px;width:0.11rem;height: 0.12rem;background-size: cover;display: block;margin-right:0.05rem}
+        .menu .con{width:0.48rem;height:0.43rem;margin-top: 0.2rem;margin-right: 0.1rem;}
     </style>
     <script src="../../js/jquery-2.1.0.js"></script>
     <script src="../../js/public.js?id=1"></script>
@@ -235,22 +135,22 @@
 <div class="bd" id="box">
     <img src="images/1.jpg?id=1" alt="">
     <div class="big j1 blinking-icon" data-src="images/jia1.png">
-        <img src="../../images/kai.png" alt="">
+        <img src="../../images/jia.png" alt="">
     </div>
     <div class="big j2 blinking-icon" data-src="images/jia2.png">
-        <img src="../../images/kai.png" alt="">
+        <img src="../../images/jia.png" alt="">
     </div>
     <div class="big j3 blinking-icon" data-src="images/jia3.png">
-        <img src="../../images/kai.png" alt="">
+        <img src="../../images/jia.png" alt="">
     </div>
     <div class="menu">
         <div class="con">
-            <img src="../../images/menu1.png" alt="">
+            <img src="../../images/menu.png" alt="">
         </div>
         <div class="list" style="display: none">
             <div class="mbg hover"><a href="../page1/index.html" class=""><i></i>脊髓病灶</a></div>
             <div class="mbg"><a href="../page2/index.html" class=""><i></i>迈向治愈</a></div>
-            <!-- <div class="mbg"><a href="../page3/index.html" class=""><i></i>MRI规范</a></div> -->
+            <div class="mbg"><a href="../page3/index.html" class=""><i></i>MRI规范</a></div>
         </div>
     </div>
 </div>
@@ -389,4 +289,3 @@
 
 </body>
 </html>
-
